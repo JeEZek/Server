@@ -11,12 +11,12 @@ models.Base.metadata.create_all(bind=engine)
 
 app.include_router(
     router=users_router,
-    prefix="/users"
+    prefix="/api/users"
 )
 
 app.include_router(
     router=clients_router,
-    prefix="/clients"
+    prefix="/api/clients"
 )
 
 if __name__ == '__main__':
