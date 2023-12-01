@@ -13,8 +13,8 @@ def get_all_clients(db: Session = Depends(get_db)):
     return get_clients(db)
 
 
-@router.post("/create", response_model=schemes.Client)
-def add_the_client(name: str, db: Session = Depends(get_db)):
+@router.post("", response_model=schemes.Client)
+def create_the_client(name: str, db: Session = Depends(get_db)):
     return add_client(db, name)
 
 

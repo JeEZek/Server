@@ -12,10 +12,13 @@ def get_clients(db: Session):
 
 def add_client(db: Session, name: str):
     new_client = Client(name=name)
+    if new_client:
+        return JSONResponse(content={"message": "Client with this name already exists"})
+
     db.add(new_client)
     db.commit()
     db.refresh(new_client)
-    return new_client
+    return JSONResponse(content={"message": "Client created successfully"})
 
 
 def delete_client(db: Session, client_id: int):

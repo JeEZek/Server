@@ -12,7 +12,6 @@ class Client(Base):
 
     users = relationship("User", back_populates="owner")
 
-
 class User(Base):
     __tablename__ = "users"
 
