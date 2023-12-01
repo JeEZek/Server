@@ -24,6 +24,6 @@ def update_the_user(client_id: int, user_id, name: str = None, address: str = No
     return update_user(db=db, owner_id=client_id, user_id=user_id, name=name, address=address, email=email)
 
 
-@router.delete("/delete.", response_model=schemes.User)
+@router.delete("", response_model=schemes.User)
 def delete_user_from_the_client(owner_id: int, user_id: int, db: Session = Depends(get_db)):
     return delete_user(owner_id=owner_id, user_id=user_id, db=db)

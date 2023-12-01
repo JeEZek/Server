@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-# write your datas
+# write your data
 SQLALCHEMY_DATABASE_URL = "postgresql://postgres:testtask@localhost:5432/platform"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
